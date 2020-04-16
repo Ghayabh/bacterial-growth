@@ -1,2 +1,2 @@
 # predictive-microbiology
-this package provides tools (functions & models) for predictive microbiology
+This R package provides tools (functions & models) for predictive microbiology
