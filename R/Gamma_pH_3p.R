@@ -9,8 +9,8 @@
 #'
 #' @examples
 Gamma_pH_3p <- function(pH,pHmin,muopt,pHopt)
-{sqrtmumax<-sqrt(((pH >= pHmin) & (pH <=(2 * pHopt- pHmin)) * muopt
-                   * (pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) / ((pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) - (pH - pHopt)^2)))
+{sqrtmumax<-sqrt(((pH >= pHmin) & (pH <=(2 * pHopt- pHmin))) * muopt
+                   * (pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) / ((pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) - (pH - pHopt)^2))
 return((sqrtmumax^2))
 }
 
