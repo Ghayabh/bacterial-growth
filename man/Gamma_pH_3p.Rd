@@ -21,3 +21,8 @@ sqrmumax^2= mumax #maximum growth rate # a number
 \description{
 this function of secondary growth model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of pH, This is a symetric cardinal pH model developped by Rosso & al.in 1995  with three parameters (pHmin, pHopt, muopt), obtained by fixing pHmax =2
 }
+\examples{
+Gamma_pH_3p(5,4,0.5,7)
+Gamma_pH_3p(4,4,0.2,7)
+Gamma_pH_3p(7,4,2,7)
+}

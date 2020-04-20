@@ -8,10 +8,18 @@
 #' @export
 #'
 #' @examples
+#' Gamma_pH_3p(5,4,0.5,7)
+#' Gamma_pH_3p(4,4,0.2,7)
+#' Gamma_pH_3p(7,4,2,7)
 Gamma_pH_3p <- function(pH,pHmin,muopt,pHopt)
 {sqrtmumax<-sqrt(((pH >= pHmin) & (pH <=(2 * pHopt- pHmin))) * muopt
                    * (pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) / ((pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) - (pH - pHopt)^2))
 return((sqrtmumax^2))
 }
-
-
+library(testthat)
+test_that("Cheking the model Gamma_pH_3p",
+          {expect_equal (Gamma_pH_3p(7,4,2,7),2)
+            expect_equal(Gamma_pH_3p(4,4,0.2,7),0)
+            expect_equal(Gamma_pH_3p(5,3,1,7),0,75)
+            }
+          )

@@ -10,6 +10,7 @@
 #' @examples
 #' Gamma_aw_3p(0.95,0.90, 0.98, 0.5)
 Gamma_aw_3p<-function(aw,awmin,awopt,muopt)
-{ sqrtmumax <- sqrt((aw >= awmin) * muopt * (aw - 1)*(aw - awmin)^2 / ((awopt - awmin) * (awopt - awmin) * (aw - awopt) - (awopt - 1) * (awopt + awmin - 2.0 * aw)))
+{ sqrtmumax <- sqrt((aw >= awmin) * muopt * (aw - 1)*(aw - awmin)^2 / ((awopt - awmin) * ((awopt - awmin) * (aw - awopt) - (awopt - 1) * (awopt + awmin - 2 * aw))))
 return((sqrtmumax ^ 2))
 }
+
