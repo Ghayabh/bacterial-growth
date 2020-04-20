@@ -8,9 +8,9 @@
 #' @export
 #'
 #' @examples
-#' Proba_pH(5,pHinf=-4.34,pHsup=5.93) the values of phinf & phsup were imported from Augustin's 2012 review
-#' Proba_pH(4,pHinf=-4.34,pHsup=5.93)
-#' Proba_pH(7,pHinf=-4.34,pHsup=5.93)
+#' Proba_pH(5,pHinf=4.34,pHsup=5.93) the values of phinf & phsup were imported from Augustin's 2012 review
+#' Proba_pH(4,pHinf=4.34,pHsup=5.93)
+#' Proba_pH(7,pHinf=4.34,pHsup=5.93)
 Proba_pH<-function(pH,pHinf,pHsup){
   proba_pH_Aug<-c()
   for (i in 1:length(pH)) {
