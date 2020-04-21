@@ -17,6 +17,6 @@ LazyData: true
 RoxygenNote: 7.1.0
 Imports: 
     nlsMicrobio,
-    ggplot2
+    ggplot2,
 Suggests: 
     testthat
