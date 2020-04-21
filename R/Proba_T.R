@@ -13,18 +13,20 @@
 #' Proba_T(T=20,Tinf=-3.6,Tsup=17.3,c=7.6)
 Proba_T<- function(T,Tinf,Tsup,c) {
   proba_T_Aug<-c()
+
   for (i in 1:length(T)) {
-  }
+
   if (T[i]<=Tinf){
-    proba_T_Aug[i]=0
+    proba_T_Aug[i]<-0
   }
   else
   {if(T[i]>=Tsup){
-    proba_T_Aug[i]=1
+    proba_T_Aug[i]<-1
   }
     else
       proba_T_Aug[i]<-(exp(T[i]/c)-exp(Tinf/c))/(exp(Tsup/c)-exp(Tinf/c))
-  }
+  }}
   return(proba_T_Aug)
 }
+
 

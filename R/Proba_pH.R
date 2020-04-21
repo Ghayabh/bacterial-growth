@@ -15,7 +15,7 @@ Proba_pH<-function(pH,pHinf,pHsup){
   proba_pH_Aug<-c()
   for (i in 1:length(pH)) {
 
-  }
+
   if(pH[i]<=pHinf){
     proba_pH_Aug[i]=0
   }
@@ -26,6 +26,7 @@ Proba_pH<-function(pH,pHinf,pHsup){
   } else
     proba_pH_Aug[i]<-  (exp(-pH[i])-exp(-pHinf))/(exp(-pHsup)-exp(-pHinf))
 
-  }
+  }}
   return(proba_pH_Aug)
 }
+

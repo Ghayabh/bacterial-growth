@@ -15,7 +15,7 @@ Proba_aw<-function(aw,awinf,awsup){
   proba_aw_Aug<-c()
   for (i in 1:length(aw)) {
 
-  }
+
   if (aw[i]<=awinf){
     proba_aw_Aug[i]=0
   }
@@ -24,7 +24,7 @@ Proba_aw<-function(aw,awinf,awsup){
     proba_aw_Aug[i]=1
   }else
     proba_aw_Aug[i]<-(aw[i]-awinf)/(awsup-awinf)
-  }
+  }}
 
   return(proba_aw_Aug)
 }

@@ -19,4 +19,5 @@ Imports:
     nlsMicrobio,
     ggplot2,
 Suggests: 
-    testthat
+    testthat,
+    covr
