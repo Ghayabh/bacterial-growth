@@ -1,2 +1,2 @@
-# predictive-microbiology
+# bacterial growth
 This R package provides tools (functions & models) for predictive microbiology
