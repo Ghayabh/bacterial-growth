@@ -1,5 +1,7 @@
 
 #' This function describes the evolution of the probability of single-cell growth with environmental factors (T, pH & aw). For this, we used the model proposed by Jean Christophe Augustin and Aurelia Czarnecka-Kwasiborski in 2012, to describe the combined effect of the three environmental factors. in this model T, pH and aw were considered to have independent effects on the single cell
+#'@details
+#'\deqn{\begin{equation}p\left(T, \mathrm{pH}, a_{w}\right)=p(T) \cdot p(\mathrm{pH}) \cdot p\left(\mathrm{a}_{\mathrm{w}}\right)\end{equation}}
 #'
 #' @param T  Temperature value # a number
 #' @param Tinf The theoritical cellular minimal temperature for growth #a number

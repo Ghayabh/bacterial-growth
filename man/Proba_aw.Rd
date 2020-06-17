@@ -14,8 +14,15 @@ Proba_aw(aw, awinf, awsup)
 \item{awsup}{The cellular maximal value of aw for growth # a number}
 }
 \value{
-proba_pH_Aug The single-cell growth probability # a number
+proba_aw_Aug The single-cell growth probability # a number
 }
 \description{
 This function describes the evolution of the single-cell growth probability with water activity (aw). For this, we used the model proposed by Jean Christophe Augustin and Aurelia Czarnecka-Kwasiborski in 2012, to describe the increase of the probability from 0 to 1 with increasing values of aw.
+}
+\details{
+\deqn{\begin{equation}p\left(\mathrm{a}_{\mathrm{w}}\right)=\left\{\begin{array}{ll}
+0, & \mathrm{a}_{\mathrm{w}} \leq \mathrm{a}_{\mathrm{w}, \mathrm{inf}} \\
+\frac{\mathrm{a}_{\mathrm{w}}-\mathrm{a}_{\mathrm{w}, \mathrm{inf}}}{\mathrm{a}_{\mathrm{w}, \mathrm{sup}}-\mathrm{a}_{\mathrm{w}, \mathrm{inf}}}, & \mathrm{a}_{\mathrm{w}, \text { inf }}<\mathrm{a}_{\mathrm{w}}<\mathrm{a}_{\mathrm{w}, \text { sup }} \\
+1, & \mathrm{a}_{\mathrm{W}} \geq \mathrm{a}_{\mathrm{w}, \text { sup }}
+\end{array}\right.\end{equation}}
 }

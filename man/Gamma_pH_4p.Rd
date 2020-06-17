@@ -4,7 +4,7 @@
 \alias{Gamma_pH_4p}
 \title{this function of secondary growth model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of pH, This is a symetric cardinal pH model developped by Rosso & al.in 1995  with four parameters (pHmin, pHopt, pHmax,muopt)}
 \usage{
-Gamma_pH_4p(pH, pHmin, pHmax, muopt, pHopt)
+Gamma_pH_4p(pH, pHmin, pHmax, pHopt, muopt)
 }
 \arguments{
 \item{pH}{pH #a number}
@@ -13,9 +13,9 @@ Gamma_pH_4p(pH, pHmin, pHmax, muopt, pHopt)
 
 \item{pHmax}{Maximal growth pH #a number}
 
-\item{muopt}{Optimal growth rate # a number}
-
 \item{pHopt}{Optimal growth pH #a number}
+
+\item{muopt}{Optimal growth rate # a number}
 }
 \value{
 sqrmumax^2= mumax #maximum growth rate # a number
@@ -23,6 +23,12 @@ sqrmumax^2= mumax #maximum growth rate # a number
 \description{
 this function of secondary growth model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of pH, This is a symetric cardinal pH model developped by Rosso & al.in 1995  with four parameters (pHmin, pHopt, pHmax,muopt)
 }
+\details{
+\deqn{\begin{equation}\begin{aligned}
+&\text { "cpm_pH_4p" <- as.formula(sqrtmumax }^{\sim} \text { sqrt }\left(((\mathrm{pH}>\text { > } \text { pHmin }) \&(\mathrm{pH}<\mathrm{pHmax})) \text { * muopt } *(\mathrm{pH}-\mathrm{pHmin})^{*}(\mathrm{pH}-\mathrm{pHmax}) / \mathrm{(pH}\right.\\
+&\text { pHmin) }\left.^{*}(\mathrm{pH}-\mathrm{pHmax})-(\mathrm{pH}-\mathrm{pHopt})^{\wedge} 2\right)
+\end{aligned}\end{equation}}
+}
 \examples{
-Gamma_pH_4p(5,4,9,0.5,7)
+Gamma_pH_4p(5,4,9,7,0.5)
 }

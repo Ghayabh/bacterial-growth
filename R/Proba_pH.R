@@ -1,4 +1,10 @@
 #' This function describes the evolution of the single-cell growth probability with pH. For this, we used the model proposed by Jean Christophe Augustin and Aurelia Czarnecka-Kwasiborski in 2012, to describe the increase of the probability from 0 to 1 with increasing values of pH.
+#' @details
+#' \deqn{\begin{equation}p(\mathrm{pH})=\left\{\begin{array}{ll}
+#'0, & \mathrm{pH} \leq \mathrm{pH}_{\mathrm{inf}} \\
+#'\frac{\exp (-\mathrm{pH})-\exp \left(-\mathrm{pH}_{\mathrm{inf}}\right)}{\exp \left(-\mathrm{pH}_{\mathrm{sup}}\right)-\exp \left(-\mathrm{pH}_{\mathrm{inf}}\right)}, & \mathrm{pH}_{\mathrm{inf}}<\mathrm{pH}<\mathrm{pH}_{\mathrm{sup}} \\
+#'1, & \mathrm{pH} \geq \mathrm{pH}_{\mathrm{sup}}
+#'\end{array}\right.\end{equation}}
 #'
 #' @param pH pH value # a number
 #' @param pHinf The cellular minimal pH for growth # a number

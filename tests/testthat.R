@@ -1,5 +1,4 @@
 library(testthat)
-library(pmicrobiologyfunction)
+library(bacterialgrowth)
 
-test_check("pmicrobiologyfunction")
-
+test_check("bacterialgrowth")

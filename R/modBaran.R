@@ -1,5 +1,6 @@
 #' The primary predictive model developped by Baranyi & Roberts in 1994, to predict microbial behavior in food environments.
-#'
+#' @details
+#'\deqn{\begin{equation}\log _{10}(N)=\log _{10}\left(N_{\max }\right)-\log _{10}\left(1+\frac{10^{\log _{10}\left(N_{\max }\right)-\log _{10}\left(N_{0}\right)}-1}{1-\exp \left(-\mu_{\max } \cdot \operatorname{lag}\right)+\exp \left(-\mu_{\max } \cdot(\operatorname{lag}-t)\right)}\right)\end{equation}}
 #' @param temp time(h)
 #' @param mumax maximum growth rate # a number
 #' @param lag lag time # a number

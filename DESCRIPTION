@@ -1,15 +1,15 @@
-Package: pmicrobiologyfunction
-Title: pmicrobiology Package
+Package: bacterialgrowth
+Title: bacterialgrowth Package
 Version: 0.0.0.9000
 Authors@R: c(person(given = "Ghaya",
            family = "Ben Hmidene",
            role = c("aut", "cre"),
            email = "ghaya.benhmidene@gmail.com"),
-           person("Laurent", "Guiller", role= c("aut","ctb"), email = "guiller.laurent@gmail.com"))
+           person("Laurent", "Guillier", role= c("aut","ctb"), email = "guillier.laurent@gmail.com"))
 Author@R: Ghaya Ben Hmidene [aut, cre],
-          Laurent Guiller [aut,ctb]
+          Laurent Guillier [aut,ctb]
 Maintainer: Ghaya Ben Hmidene <ghaya.benhmidene@gmail.com>
-            Laurent Guiller   <guiller.laurent@gmail.com>
+            Laurent Guillier   <guillier.laurent@gmail.com>
 Description: This package provides predictive microbiology models to allow users to predict the behavior of pathogenic bacteria in foods.
 License: GPL-3
 Encoding: UTF-8
@@ -18,6 +18,13 @@ RoxygenNote: 7.1.0
 Imports: 
     nlsMicrobio,
     ggplot2,
+    Rdpack,
+    deSolve
 Suggests: 
     testthat,
     covr
+RdMacros: 
+    Rdpack
+Roxygen: list(markdown = TRUE)
+Depends: 
+    R (>= 2.10)

@@ -1,6 +1,10 @@
 {
-    "path" : "C:/Users/g.benhmidene/Desktop/pmicrobiologyfunction/tests/testthat",
+    "path" : "C:/Users/g.benhmidene/Desktop/bacterialgrowth/R",
     "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 1
+        },
         {
             "ascending" : true,
             "columnIndex" : 2

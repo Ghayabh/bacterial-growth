@@ -4,16 +4,16 @@
 \alias{Gamma_T}
 \title{This secondary growth model describes the influence of temperature over mumax}
 \usage{
-Gamma_T(T, Tmin, Topt, Tmax, muopt)
+Gamma_T(T, Tmin, Tmax, Topt, muopt)
 }
 \arguments{
 \item{T}{Temperature # a number}
 
 \item{Tmin}{Minimal growth temperature #a number}
 
-\item{Topt}{Optimal growth temperature #a number}
-
 \item{Tmax}{Maximal growth temperature # a number}
+
+\item{Topt}{Optimal growth temperature #a number}
 
 \item{muopt}{optimal growth rate # a number}
 }
@@ -23,6 +23,12 @@ sqrmumax^2= mumax #maximum growth rate # a number
 \description{
 This secondary growth model describes the influence of temperature over mumax
 }
+\details{
+\deqn{\begin{equation}\begin{array}{l}
+\text { "cpm_T" <- as.formula(sqrtmumax }^{\sim} \text { sqrt }\left(((T>=\operatorname{Tmin}) \&(T<=\operatorname{Tmax}))^{*} \text { muopt }^{*}(T-\operatorname{Tmax})^{*}(T-\operatorname{Tmin})^{\wedge} 2 /(\text { (Topt - } \operatorname{Tmin})^{*}\right. \\
+\left.\left.\left((\text { Topt }-\operatorname{Tmin})^{*}(T-\text { Topt })-(\text { Topt }-\operatorname{Tmax})^{*}\left(\text { Topt }+\operatorname{Tmin}-2.0^{*} T\right)\right)\right)\right) \text { ) }
+\end{array}\end{equation}}
+}
 \examples{
-Gamma_T(10,4,20,37,0.037)
+Gamma_T(10,4,37,20,0.037)
 }

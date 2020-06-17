@@ -23,6 +23,9 @@ log10N #a number
 \description{
 The primary predictive model developped by Baranyi & Roberts in 1994, to predict microbial behavior in food environments.
 }
+\details{
+\deqn{\begin{equation}\log _{10}(N)=\log _{10}\left(N_{\max }\right)-\log _{10}\left(1+\frac{10^{\log _{10}\left(N_{\max }\right)-\log _{10}\left(N_{0}\right)}-1}{1-\exp \left(-\mu_{\max } \cdot \operatorname{lag}\right)+\exp \left(-\mu_{\max } \cdot(\operatorname{lag}-t)\right)}\right)\end{equation}}
+}
 \examples{
 modBaran(temp=seq(0,24,0.5), mumax = 0.037, lag=4, log10N0 = 1, log10Nmax = 5 )
 }

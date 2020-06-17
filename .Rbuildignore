@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^devtools_history\.R$
 ^codecov\.yml$
+^\.travis\.yml$
+^data-raw$

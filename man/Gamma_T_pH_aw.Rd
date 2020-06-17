@@ -53,6 +53,19 @@ sqrmumax^2= mumax #maximum growth rate # a number
 \description{
 This model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of temperanture, pH & water activty(aw), It is a cardinal model based on the gamma concept, developed by Pinon et al. in 2004 with 9 parameters (Tmin, Topt, Tmax, pHmin, pHopt, pHmax, awmin, awopt, muopt)
 }
+\details{
+\deqn{\begin{equation}\begin{array}{l}
+\mathrm{cpm}_{-} \mathrm{T}_{-} \mathrm{pH}_{-} \mathrm{aw}<-\text { as.formula(sqrtmumax }^{\sim} \operatorname{sqrt}(((\mathrm{T}>= \\
+\mathrm{Tmin}) \&(\mathrm{T}<=\mathrm{Tmax}) \&(\mathrm{pH}>=\mathrm{pHmin}) \&(\mathrm{pH}<= \\
+(\mathrm{pHmax})) \&(\mathrm{aw}>=\mathrm{awmin}))^{*} \text { muopt }^{*}(\mathrm{T}-\mathrm{Tmax})^{*}(\mathrm{T}- \\
+\mathrm{Tmin})^{\wedge} 2 /\left((\mathrm{Topt}-\mathrm{Tmin})^{*}\left((\mathrm{Topt}-\mathrm{Tmin})^{*}(\mathrm{T}-\mathrm{Topt})-\right.\right. \\
+\left.\left.(\mathrm{Topt}-\mathrm{Tmax})^{*}\left(\mathrm{Topt}+\mathrm{Tmin}-2.0^{*} \mathrm{T}\right)\right)\right)^{*}(\mathrm{pH}-\mathrm{pHmin}) \\
+*(\mathrm{pH}-\mathrm{pHmax}) /\left((\mathrm{pH}-\mathrm{pHmin})^{*}(\mathrm{pH}-\mathrm{pHmax})-(\mathrm{pH}-\right. \\
+\left.\mathrm{pHopt})^{\wedge} 2\right)^{*}(\mathrm{aw}-1)^{*}(\mathrm{aw}-\mathrm{awmin})^{\wedge} 2 /( \text { (awopt - } \\
+\mathrm{awmin})^{*}\left((\text { awopt - awmin })^{*}(\mathrm{aw}-\text { awopt })-(\text { awopt - } 1)\right) \\
+\left.\left.\left.\left.*\left(\mathrm{awopt}+\mathrm{awmin}-2.0^{*} \mathrm{aw}\right)\right)\right)\right)\right)
+\end{array}\end{equation}}
+}
 \examples{
 Gamma_T_pH_aw(10,4,45,37,5,4,9,7,0.92,0.90,0.98,0.97,0.5)
 }
