@@ -6,6 +6,7 @@
 #' @param lag lag time # a number
 #' @param log10N0 Initial population density #a number
 #' @param log10Nmax maximum population density # a number
+#' @import nlsMicrobio
 #'
 #' @return log10N #a number
 #' @export
