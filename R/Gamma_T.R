@@ -9,7 +9,7 @@
 #' @param Tmax Maximal growth temperature # a number
 #' @param T Temperature # a number
 #' @param muopt optimal growth rate # a number
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
