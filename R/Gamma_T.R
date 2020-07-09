@@ -15,7 +15,7 @@
 #' @examples
 #' Gamma_T(10,4,37,20,0.037)
 Gamma_T <- function(T,Tmin, Tmax, Topt,muopt)
-{sqrmumax<-sqrt(((T >= Tmin) & (T <= Tmax)) * muopt * (T - Tmax) * (T - Tmin)^2 / ((Topt - Tmin) * ((Topt - Tmin) * (T - Topt) - (Topt - Tmax) * (Topt + Tmin - 2.0 * T))))
-return(sqrmumax^2)
+{mumax<-((T >= Tmin) & (T <= Tmax)) * muopt * (T - Tmax) * (T - Tmin)^2 / ((Topt - Tmin) * ((Topt - Tmin) * (T - Topt) - (Topt - Tmax) * (Topt + Tmin - 2.0 * T)))
+return(mumax)
 }
 
