@@ -8,7 +8,7 @@
 #' @param awmin minimal growth water activity # a number
 #' @param muopt Optimal growth rate # a number # a number
 #'
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
