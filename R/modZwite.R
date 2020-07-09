@@ -8,24 +8,24 @@
 #' @param muopt Optimal growth rate # a number
 #' @param c2 a parameter # a number
 #'
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
 #' modZwite(5,3,9,7,0.5,0.4)
 #' modZwite(c(5,7),3,9,7,0.5,0.4)
 modZwite<-function(pH,pHmin,pHmax,pHopt,muopt,c2){
-  sqrtmumax<-c()
+  mumax<-c()
   for (i in 1:length(pH)) {
     if (pH[i]<=pHmin) {
-      sqrtmumax[i]<-0
+      mumax[i]<-0
     }
     else
       if (pH[i]>=pHmax){
-        sqrtmumax[i]<-0
+        mumax[i]<-0
       }
     else
-      sqrtmumax[i]<-sqrt(((pH[i]-pHmin)*(1-(exp(c2*(pH[i]-pHmax)))))/ ((pHopt-pHmin)*(1-(exp(c2*(pHopt-pHmax)))))*muopt)
+       mumax[i]<-(((pH[i]-pHmin)*(1-(exp(c2*(pH[i]-pHmax)))))/ ((pHopt-pHmin)*(1-(exp(c2*(pHopt-pHmax)))))*muopt)
   }
-  return(sqrtmumax^2)
+  return(mumax)
 }
