@@ -14,6 +14,6 @@
 #' @examples
 #' Gamma_aw_2p(0.92,0.90,0.097)
 Gamma_aw_2p <- function(aw,awmin,muopt)
-{sqrtmumax <- sqrt((aw >= awmin) * muopt * (aw - awmin)^2 / (1 - awmin)^2)
-return((sqrtmumax^2))
+{mumax <- ((aw >= awmin) * muopt * (aw - awmin)^2 / (1 - awmin)^2)
+return((mumax))
 }
