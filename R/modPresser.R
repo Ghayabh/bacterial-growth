@@ -5,19 +5,20 @@
 #' @param pHmin pHmin Minimal growth pH #a number
 #' @param muopt Optimal growth rate # a number
 #'
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
 #' modPresser(6,4.5,0.5)
 #' modPresser(c(6,7),5,0.02)
 modPresser<-function(pH,pHmin,muopt){
-  sqrtmumax<-c()
+  mumax<-c()
   for (i in 1:length(pH)){
     if(pH[i]<=pHmin) {
-      sqrtmumax[i]<-0
+      mumax[i]<-0
     } else
-      sqrtmumax[i]<-sqrt(1-(10^(pHmin-pH[i]))*muopt)
+      mumax[i]<-1-(10^(pHmin-pH[i]))*muopt
   }
-  return(sqrtmumax^2)
+  return(mumax)
 }
+
