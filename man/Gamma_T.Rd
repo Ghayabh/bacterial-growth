@@ -18,7 +18,7 @@ Gamma_T(T, Tmin, Tmax, Topt, muopt)
 \item{muopt}{optimal growth rate # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 This secondary growth model describes the influence of temperature over mumax

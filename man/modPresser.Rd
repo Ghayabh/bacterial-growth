@@ -14,7 +14,7 @@ modPresser(pH, pHmin, muopt)
 \item{muopt}{Optimal growth rate # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 The following function is suggested by Presser et al. (1997) for the suboptimal pH range.

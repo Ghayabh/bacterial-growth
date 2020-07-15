@@ -18,7 +18,7 @@ Gamma_pH_4p(pH, pHmin, pHmax, pHopt, muopt)
 \item{muopt}{Optimal growth rate # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 this function of secondary growth model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of pH, This is a symetric cardinal pH model developped by Rosso & al.in 1995  with four parameters (pHmin, pHopt, pHmax,muopt)

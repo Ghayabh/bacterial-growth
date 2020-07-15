@@ -16,7 +16,7 @@ modelPresserext(pH, pHmin, pHmax, muopt)
 \item{muopt}{Optimal growth rate # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 This extended Presser model was quoted by Tienungoon et al. (2000) for the full biokinetic range

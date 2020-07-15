@@ -20,7 +20,7 @@ modZwite(pH, pHmin, pHmax, pHopt, muopt, c2)
 \item{c2}{a parameter # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 This model is developed by  Zwietering et al. (1992, 1993).It's a square root type model but with an extra ﬁtting parameter-c2

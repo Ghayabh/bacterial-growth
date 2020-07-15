@@ -8,7 +8,7 @@
 #' @param pHmin Minimal growth pH #a number
 #' @param pHopt Optimal growth pH #a number
 #' @param muopt Optimal growth rate # a number
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
@@ -16,8 +16,8 @@
 #' Gamma_pH_3p(4,4,7,0.2)
 #' Gamma_pH_3p(7,4,7,2)
 Gamma_pH_3p <- function(pH,pHmin,pHopt,muopt)
-{sqrtmumax<-sqrt(((pH >= pHmin) & (pH <=(2 * pHopt- pHmin))) * muopt
-                   * (pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) / ((pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) - (pH - pHopt)^2))
-return((sqrtmumax^2))
+{mumax<-(((pH >= pHmin) & (pH <=(2 * pHopt- pHmin))) * muopt
+                 * (pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) / ((pH - pHmin) * (pH - ((2 * pHopt) - pHmin)) - (pH - pHopt)^2))
+return(mumax)
 }
 

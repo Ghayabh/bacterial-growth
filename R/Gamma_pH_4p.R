@@ -10,14 +10,14 @@
 #' @param muopt Optimal growth rate # a number
 #' @param pHopt Optimal growth pH #a number
 #'
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
 #' Gamma_pH_4p(5,4,9,7,0.5)
 Gamma_pH_4p<- function(pH,pHmin,pHmax,pHopt,muopt)
-{sqrtmumax<-sqrt(((pH >= pHmin) & (pH <= pHmax)) * muopt
+{mumax<-(((pH >= pHmin) & (pH <= pHmax)) * muopt
                  *(pH - pHmin) * (pH - pHmax) / ((pH - pHmin) * (pH - pHmax) - (pH - pHopt)^2))
-return((sqrtmumax^2))
+return(mumax)
 }
 

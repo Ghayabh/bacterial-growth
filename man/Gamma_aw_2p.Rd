@@ -14,7 +14,7 @@ Gamma_aw_2p(aw, awmin, muopt)
 \item{muopt}{Optimal growth rate # a number # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 this function of secondary growth model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of water activity (aw), This is a symetric cardinal pH model developped by Rosso & Robinson in 2001 with two parameters (awmin, muopt) and awopt =1

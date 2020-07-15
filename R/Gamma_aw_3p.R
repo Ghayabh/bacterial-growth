@@ -12,13 +12,13 @@
 #' @param awopt optimal growth water activity # a number
 #' @param muopt Optimal growth rate # a number # a number
 #'
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return  mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
 #' Gamma_aw_3p(0.95,0.90, 0.98, 0.5)
 Gamma_aw_3p<-function(aw,awmin,awopt,muopt)
-{ sqrtmumax <- sqrt((aw >= awmin) * muopt * (aw - 1)*(aw - awmin)^2 / ((awopt - awmin) * ((awopt - awmin) * (aw - awopt) - (awopt - 1) * (awopt + awmin - 2 * aw))))
-return((sqrtmumax ^ 2))
+{mumax <- ((aw >= awmin) * muopt * (aw - 1)*(aw - awmin)^2 / ((awopt - awmin) * ((awopt - awmin) * (aw - awopt) - (awopt - 1) * (awopt + awmin - 2 * aw))))
+return((mumax))
 }
 

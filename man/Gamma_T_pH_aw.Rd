@@ -48,7 +48,7 @@ Gamma_T_pH_aw(
 \item{muopt}{Optimal growth rate # a number # a number}
 }
 \value{
-sqrmumax^2= mumax #maximum growth rate # a number
+mumax #maximum growth rate # a number
 }
 \description{
 This model describe the evolution of the square root of the maximum specific growth rate (sqrtmumax) as a function of temperanture, pH & water activty(aw), It is a cardinal model based on the gamma concept, developed by Pinon et al. in 2004 with 9 parameters (Tmin, Topt, Tmax, pHmin, pHopt, pHmax, awmin, awopt, muopt)

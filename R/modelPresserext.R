@@ -6,25 +6,25 @@
 #' @param pHmax Maximal growth pH #a number
 #' @param muopt Optimal growth rate # a number
 #'
-#' @return sqrmumax^2= mumax #maximum growth rate # a number
+#' @return mumax #maximum growth rate # a number
 #' @export
 #'
 #' @examples
 #' modelPresserext(7,3,9,0.5)
 #' modelPresserext(c(7,5),3,9,0.5)
 modelPresserext<-function(pH,pHmin,pHmax,muopt){
-  sqrtmumax<-c()
+    mumax<-c()
   for (i in 1:length(pH)){
     if (pH[i]<=pHmin) {
-      sqrtmumax[i]<-0
+      mumax[i]<-0
     }
     else
       if(pH[i]>=pHmax){
-        sqrtmumax[i]<-0
+        mumax[i]<-0
       }
     else{
-      sqrtmumax[i]<-sqrt(muopt*(1-(10^(pHmin-pH[i])))*(1-(10^(pH[i]-pHmax))))
+      mumax[i]<-muopt*(1-(10^(pHmin-pH[i])))*(1-(10^(pH[i]-pHmax)))
     }
   }
-  return(sqrtmumax^2)
+  return(mumax)
 }
