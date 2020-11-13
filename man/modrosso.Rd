@@ -4,7 +4,7 @@
 \alias{modrosso}
 \title{The logistic primary growth model using delay and rupture, developped by Rosso in 1996, describes growth as a function of time.}
 \usage{
-modrosso(temp, mumax, lag, N0, Nmax)
+modrosso(temp, mumax, lag, log10N0, log10Nmax)
 }
 \arguments{
 \item{temp}{time (h)}
@@ -13,9 +13,9 @@ modrosso(temp, mumax, lag, N0, Nmax)
 
 \item{lag}{lag time # a number}
 
-\item{N0}{initial population size # a number}
+\item{log10N0}{initial population size # a number}
 
-\item{Nmax}{maximum population size #a number}
+\item{log10Nmax}{maximum population size #a number}
 }
 \value{
 log10N #a number
@@ -30,5 +30,5 @@ The logistic primary growth model using delay and rupture, developped by Rosso i
 \end{array}\right.\end{equation}}
 }
 \examples{
-modrosso(temp=seq(0,24,0.5),mumax=0.37,lag=4,N0=100,Nmax = 10^5)
+modrosso(temp=seq(0,24,0.5),mumax=0.37,lag=4,log10N0=2,log10Nmax = 5)
 }
