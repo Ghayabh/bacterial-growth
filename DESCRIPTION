@@ -19,12 +19,15 @@ Imports:
     nlsMicrobio,
     ggplot2,
     Rdpack,
-    deSolve
+    deSolve,
 Suggests: 
     testthat,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 RdMacros: 
     Rdpack
 Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 2.10)
+VignetteBuilder: knitr

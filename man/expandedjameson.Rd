@@ -29,7 +29,9 @@ t \geq t_{\mathrm{lag}-\mathrm{NB}}, \quad \frac{\mathrm{d} \mathrm{NB} / \mathr
 }
 \examples{
 library(deSolve)
-out <- ode(y = c(Q1=1/((1/exp(-2))-1),Q2=1/((1/exp(-10))-1),y1=1,y2=10),times = seq(from=0, to=200, by = 1), func = expandedjameson, parms = c(gamma=1, mumax1 = 0.14, mumax2=0.3, ymax1=100000,ymax2=10000000))
+out <- ode(y = c(Q1=1/((1/exp(-2))-1),Q2=1/((1/exp(-10))-1),y1=1,y2=10),
+times = seq(from=0, to=200, by = 1), func = expandedjameson,
+parms = c(gamma=1, mumax1 = 0.14, mumax2=0.3, ymax1=100000,ymax2=10000000))
 plot(out)
 plot(time,log10(out[,"y1"]),col="red", lwd = 2, lty = 1)
 plot(time,log10(out[,"y2"]),col="green", lwd = 2, lty = 1)

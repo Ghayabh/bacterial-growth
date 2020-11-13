@@ -30,6 +30,7 @@ Q=1/((1/exp(-K))-1)
 state<-c(Q=Q,y=15)
 time<-seq(0,70, 1)
 parameters<- c(mumax=1)
-out_baranyi_without_lag<-ode(y = state, times = time, func = baranyi_diff_without_Nmax, parms = parameters)
+out_baranyi_without_lag<-ode(y = state, times = time, func = baranyi_diff_without_Nmax,
+parms = parameters)
 plot(time,log10(out_baranyi_without_lag[,"y"]),lty=1,col='red')
 }

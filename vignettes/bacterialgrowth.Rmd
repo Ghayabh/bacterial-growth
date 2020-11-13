@@ -1,0 +1,119 @@
+---
+title: "bacterialgrowth"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{bacterialgrowth}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Introduction 
+Predictive microbiology aims to predict the evolution of pathogenic microorganisms in food.
+The R package Bacterialgrowth provides mathematical functions based on predictive microbiology models published in the literature by various researchers. This package allows users to model the growth of pathogenic microorganisms and to fit data to primary and secondary growth models. It can be downloaded from CRAN and loaded using the following command:
+
+```{r setup}
+library(bacterialgrowth)
+```
+Primary and secondary mathematical models are used to model the behavior of microorganisms. Indeed, the primary model aims to reproduce the evolution of the concentration of microorganisms over time in a given environment. The evolution of a microbial population can be described by a series of parameters, such as N0 , λ, μmax, Nmax. Secondary models are used to describe the influence of environmental factors on primary parameters.
+
+In order to predict the growth of microorganisms or to fit data obtained experimentally. The package bacterialgrowth takes advantage of several packages such as the nlsMicrobio package (Florent Baty and al., 2015), ggplot2 (Hadley Wickham and al., 2020), Rdpack (Georgi N. Boshnakov and al., 2020), and the deSolve package (Karline Soetaert and al., 2020).
+
+# Primary models 
+
+The most commonly used primary growth models have been implemented in this package such as:
+-	The Buchanan model(Buchanan and al. (1997)): It is the first primary growth model that has been described in predictive microbiology. It can be used as a first approach to estimate the evolution of the number of microorganisms according to a pessimistic scenario.
+
+$$
+f\left(t, \Theta_{1}\right)=\left\{\begin{array}{ll}
+\ln x_{0} & , t \leq \text {lag} \\
+\ln x_{0}+\mu_{\max } \cdot(t-\text {lag}) & , t>\text {lag}
+\end{array}\right.
+$$
+- The Rosso model (Rosso, 1995): This logistic model assumes that there is no possibility of growth during the lag phase and that there is no transition between the lag phase and the exponential phase.
+$$
+\begin{equation}f\left(t, \Theta_{1}\right)=\left\{\begin{array}{ll}
+\ln x_{0} & , t \leq \operatorname{lag} \\
+\ln x_{\max }-\ln \left(1+\left(\frac{x_{\max }}{x_{0}}-1\right) \cdot \exp \left(-\mu_{\max } \cdot(t-\operatorname{lag})\right)\right) & , t>\operatorname{lag}
+\end{array}\right.\end{equation}
+$$
+- The Baranyi model (baranyi and al., 1993): is also one of the most used models currently. This model is based on a differential equation (exponential phase) and completed by two fitting functions.
+The adjustment function is considered to be dependent on the concentration in one
+Critical substance for cell division based on a kinetics of type Michaelis-Menten. 
+$$
+{\begin{equation}d Q=\operatorname{mu_{max}}^{*} Q\end{equation}}
+$$
+$$
+{\begin{equation}d y=(Q /(1+Q))^{*} \operatorname{mu_{max}}^{*}(1-(y / y_{max} ))^{*} y\end{equation}}
+$$
+This model was subsequently modified by assuming that the production of the critical substance followed a kinetic
+of first order. Then the solution of the differential equation is :
+$$
+{\begin{equation}\log _{10}(N)=\log _{10}\left(N_{\max }\right)-\log _{10}\left(1+\frac{10^{\log _{10}\left(N_{\max }\right)-\log _{10}\left(N_{0}\right)}-1}{1-\exp \left(-\mu_{\max } \cdot \operatorname{lag}\right)+\exp \left(-\mu_{\max } \cdot(\operatorname{lag}-t)\right)}\right)\end{equation}}
+$$
+
+## Usage :
+-  modBuchanan
+
+-  modrosso
+
+-  modBaran
+
+-  modBaran_without_lag
+
+-  modBaran_without_Nmax
+
+-  baranyi_diff
+
+-  baranyi_diff_without_lag
+
+-  baranyi_diff_without_Nmax
+
+## Details
+
+These models are used to describe the evolution of the decimal logarithm of the microbial count (LOG10N) as a function of the time (t).
+
+- modBuchanan is the three-phase linear model proposed by Buchanan et al. (1997)
+
+- modRosso is the model f Rosso with four parameters(LOG10N0, mumax, lag, LOG10Nmax)
+
+- modBaran is the model of Baranyi and Roberts (1994) with four parameters (LOG10N0, mumax, lag,
+LOG10Nmax)
+
+- modBaran_without_lag is the model of Baranyi and Roberts (1994) with three parameters (LOG10N0,
+mumax, LOG10Nmax), without lag time 
+
+- modBaran _without_Nmax is the model of Baranyi and Roberts (1994) with three parameters (LOG10N0,
+mumax, lag), without braking
+
+- baranyi_diff is the differential form of the model of Baranyi and Roberts (1994), with the fit function and the braking function.
+
+
+- baranyi_diff_without_lag is the differential form of the model of Baranyi and Roberts (1994), without lag time 
+
+- baranyi_diff_without_Nmax is the differential form of the model of Baranyi and Roberts (1994), without braking
+
+# Références :
+
+Baranyi J and Roberts, TA (1994) A dynamic approach to predicting bacterial growth in food, International Journal of Food Microbiology, 23, 277-294.
+
+Buchanan RL, Whiting RC, Damert WC (1997) When is simple good enough: a comparison of
+the Gompertz, Baranyi, and three-phase linear models for fitting bacterial growth curves. Food Microbiology, 14, 313-326.
+
+Florent Baty, Delignette-Muller. (2015). Package (‘nlsMicrobio’), (https://cran.r-project.org/web/packages/nlsMicrobio/nlsMicrobio.pdf)
+
+Georgi N. Boshnakov, Duncan Murdoch. (2020).  Inserting references in Rd and roxygen2 documentation
+(https://cran.r-project.org/web/packages/Rdpack/vignettes/Inserting_bibtex_references.pdf)
+
+Hadley Wickham, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, Dewey Dunnington. (2020). Package ‘ggplot2’ (https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf)
+
+Karline Soetaert, Thomas Petzoldt, R. Woodrow Setzer, Peter N. Brown, George D. Byrne, Ernst Hairer, Alan C. Hindmarsh, Cleve Moler, Linda R. Petzold, Youcef Saad, Clement W. Ulrich. (2020) . R Package deSolve, Writing Code in Compiled Languages, Package deSolve: Solving Initial Value Differential
+Equations in R (https://cran.r-project.org/web/packages/deSolve/vignettes/deSolve.pdf) (https://cran.r-project.org/web/packages/deSolve/vignettes/compiledCode.pdf)
+
+Rosso, L. 1995. Modélisation et Microbiologie Prévisionnelle : Elaboration d'un Nouvel Outil pour
+l'Agro-alimentaire. Thèse de Doctorat, Université Claude Bernard - Lyon I, n° 95-197.

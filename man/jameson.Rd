@@ -36,7 +36,9 @@ Q1=1/((1/exp(-K1))-1)
 state <- c(Q1=Q1,Q2=Q2,y1=1,y2=10)
 time <- seq(from=0, to=200, by = 1)
 parameters <- c(mumax1 = 0.14, mumax2=0.3, ymax1=100000,ymax2=10000000)
-out <- ode(y = c(Q1=1/((1/exp(-2))-1),Q2=1/((1/exp(-10))-1),y1=1,y2=10),times = seq(from=0, to=200, by = 1), func = jameson, parms = c(mumax1 = 0.14, mumax2=0.3, ymax1=100000,ymax2=10000000))
+out <- ode(y = c(Q1=1/((1/exp(-2))-1),Q2=1/((1/exp(-10))-1),y1=1,y2=10),
+times = seq(from=0, to=200, by = 1),
+func = jameson, parms = c(mumax1 = 0.14, mumax2=0.3, ymax1=100000,ymax2=10000000))
 plot(out)
 plot(time,log10(out[,"y1"]),col="red", lwd = 2, lty = 1)
 plot(time,log10(out[,"y2"]),col="green", lwd = 2, lty = 1)
